@@ -1,0 +1,31 @@
+# Type Content here...
+# Input the dimension of the square matrices
+n = int(input("dimension: "))
+
+# Input the first matrix
+print("first matrix:")
+A = []
+for _ in range(n):
+    row = list(map(int, input().split()))
+    A.append(row)
+
+# Input the second matrix
+print("second matrix:")
+B = []
+for _ in range(n):
+    row = list(map(int, input().split()))
+    B.append(row)
+
+# Initialize the result matrix with zeros
+result = [[0 for _ in range(n)] for _ in range(n)]
+
+# Perform matrix multiplication
+for i in range(n):
+    for j in range(n):
+        for k in range(n):
+            result[i][j] += A[i][k] * B[k][j]
+
+# Print the resultant matrix
+print("Resultant Matrix:")
+for i in range(n):
+    print(" ".join(map(str, result[i])))
